@@ -9,7 +9,7 @@ import StudentResults from '../StudentResults/StudentResults';
 const Spreadsheet = ({ items }) => {
   return (
     <div className={css.wrapper}>
-      <StudentResults />
+      <StudentResults items={items}/>
       <Thead />
       <Tbody items={items} />
       <p className={css.title}>Archived</p>

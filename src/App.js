@@ -5,7 +5,7 @@ import Students from "./pages/Students/Students";
 import Container from "./components/Container/Container";
 import Header from "./components/Header/Header";
 
-import data from './components/Table/utilit.json';
+import data from './services/utilit.json';
 
 
 function App() {

@@ -1,0 +1,75 @@
+.infoSort {
+  display: flex;
+}
+
+.dropdown {
+  display: flex;
+  margin-right: 18px;
+}
+
+.dropBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 154px;
+  height: 32px;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: #5b5b5b;
+  background: #ffffff;
+  border: 1px solid #c0c0c0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.dropBtn:not(:last-child) {
+  margin-right: 16px;
+}
+
+.arrow {
+  display: inline-block;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  background-image: url("../../../assets/arrow_drop_down_logo.svg");
+  background-repeat: no-repeat;
+  padding-left: 8px;
+}
+
+.date {
+  display: flex;
+}
+
+.form {
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.input {
+  width: 200px;
+  height: 32px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #c0c0c0;
+  background-color: transparent;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #c0c0c0;
+  outline: none;
+  margin-right: 200px;
+}
+
+.loader{
+  width: 32px;
+  height: 32px;
+  background-image: url("../../../assets/actions_loader.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}

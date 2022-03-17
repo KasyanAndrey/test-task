@@ -1,3 +1,7 @@
+.infoUser{
+  margin-bottom: 12px;
+}
+
 .user {
   display: flex;
   margin-right: 12px;
@@ -7,19 +11,18 @@
   display: flex;
   margin-right: 15px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 14px;
   text-transform: uppercase;
-  color: #5b5b5b;
+  color: #777777;
 }
 
 .userData {
   display: inline-block;
   padding-left: 8px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 14px;
-  line-height: 140%;
   text-transform: uppercase;
-  color: #777777;
+  color: #5b5b5b;
 }
