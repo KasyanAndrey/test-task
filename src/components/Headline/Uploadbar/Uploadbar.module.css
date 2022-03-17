@@ -1,0 +1,20 @@
+.uploadBtn {
+  position: relative;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: #c0c0c0;
+}
+
+.iconBtn {
+  position: absolute;
+  bottom: -2px;
+  left: -16px;
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  background-image: url("../../../assets/upload.svg");
+  background-repeat: no-repeat;
+}

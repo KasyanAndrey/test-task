@@ -1,0 +1,27 @@
+.wrapper {
+  width: 1280px;
+  height: 422px;
+  background: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 4px rgba(60, 52, 135, 0.15);
+  padding: 20px 60px;
+}
+
+.infoUser{
+  background-color: #888;
+}
+
+.infoSort{
+  background-color: #666;
+}
+
+.labels{
+  background-color: #444;
+
+}
+
+.table{
+  background-color: #222;
+
+}

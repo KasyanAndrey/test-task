@@ -1,0 +1,56 @@
+.wrapper {
+  display: flex;
+  align-content: center;
+  width: 499px;
+  height: 32px;
+}
+
+.form {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #f2f2f2;
+}
+
+.formBtn {
+  display: inline-block;
+  padding: 6px 12px;
+  width: 16px;
+  height: 16px;
+  border: 0;
+  background-color: transparent;
+  background-image: url("../../../assets/search_icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.formBtnLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.input {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 6px 0px 6px 12px;
+  background-color: #f2f2f2;
+  color: #5b5b5b;
+}
+
+.input::placeholder {
+  color: #c0c0c0;
+}

@@ -1,0 +1,22 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 640px;
+  height: 32px;
+  align-items: center;
+}
+
+.link {
+  width: max-content;
+  padding: 6px 12px;
+  color: #777777;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+}
+
+.activeLink {
+  background-color: #A6192E;
+  color: #fff;
+}

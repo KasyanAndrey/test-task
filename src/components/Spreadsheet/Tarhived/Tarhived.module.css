@@ -1,0 +1,84 @@
+.tr {
+  display: flex;
+}
+
+.checkbox {
+  width: 20px;
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+
+.az {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url("../../../assets/az.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.id {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 96px;
+}
+
+.arrow {
+  display: inline-block;
+  width: 6px;
+  height: 12px;
+  background-image: url("../../../assets/table_arrow.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.class {
+  width: 40px;
+}
+
+.score {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+}
+
+.speed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 112px;
+}
+
+.parents {
+  width: 364px;
+}
+
+.action {
+  width: 100px;
+}
+
+.arrowAction {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("../../../assets/arrow_drop_down.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.td {
+  height: 48px;
+  display: inline-block;
+  margin-right: 24px;
+  text-align: start;
+  color: #C0C0C0;
+  font-size: 14px;
+  font-weight: 400;
+}

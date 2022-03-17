@@ -1,0 +1,68 @@
+.wrapper {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 56px;
+}
+
+.pagBox {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  width: 360px;
+  margin: 0 auto;
+  color: #5b5b5b;
+  font-size: 14px;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  width: 158px;
+}
+.title {
+  margin-right: 4px;
+}
+.numPage {
+  display: flex;
+  align-items: center;
+}
+
+.aroowduwn {
+  display: inline-flex;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background-image: url("../../assets/arrow_drop_down.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.item {
+  display: flex;
+  width: 100px;
+}
+
+.arrowbox {
+  display: flex;
+  justify-content: space-around;
+  width: 72px;
+}
+
+.arrowleft {
+  display: inline-flex;
+  width: 9px;
+  height: 16px;
+  background-image: url("../../assets/arrowleft.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.arrowright {
+  display: inline-flex;
+  width: 9px;
+  height: 16px;
+  background-image: url("../../assets/arrowright.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}

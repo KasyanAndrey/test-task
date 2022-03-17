@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: #5b5b5b;
+}
+
+.dropdown{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.dropBtn {
+  position: relative;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: #c0c0c0;
+  text-transform: uppercase;
+}
+
+.dropBtn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("../../assets/arrow_drop_down.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.closeBtn {
+  position: absolute;
+  bottom: 4px;
+  left: -14px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("../../assets/close_button.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+}

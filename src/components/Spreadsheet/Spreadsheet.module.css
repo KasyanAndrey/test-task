@@ -1,0 +1,19 @@
+.wrapper {
+  width: 1280px;
+  margin: 0 auto;
+  /* padding: 0px 40px; */
+}
+
+.title {
+  height: 33px;
+  text-align: start;
+  margin: 0;
+  padding-left: 4px;
+  padding-top: 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #5b5b5b;
+  border-top: 2px solid #c0c0c0;
+}
