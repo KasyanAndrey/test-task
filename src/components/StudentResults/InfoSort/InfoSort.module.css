@@ -1,5 +1,6 @@
 .infoSort {
   display: flex;
+  margin-bottom: 12px;
 }
 
 .dropdown {

@@ -1,0 +1,69 @@
+.tr {
+  display: flex;
+  width: 1100px;
+  margin-bottom: 18px;
+}
+
+.th {
+  text-align: start;
+  height: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #777777;
+  margin-right: 12px;
+}
+
+.num {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-image: url("../../../../assets/num.svg");
+  background-repeat: no-repeat;
+  margin-right: 12px;
+}
+
+.testLabel {
+  width: 300px;
+}
+
+.score {
+  width: 48px;
+}
+
+.speed {
+  width: 112px;
+}
+
+.totalQ {
+  width: 68px;
+}
+
+.expSpeed {
+  width: 119px;
+}
+
+.concept {
+  width: 152px;
+}
+
+.date {
+  width: 112px;
+  position: relative;
+}
+
+.arrow {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  background-image: url("../../../../assets/table_arrow.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.absent {
+  width: 48px;
+}

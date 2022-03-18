@@ -1,0 +1,41 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 609px;
+  height: 48px;
+}
+
+.tr {
+  display: flex;
+  width: 1100px;
+  margin-bottom: 12px;
+}
+
+.tb {
+  text-align: start;
+  height: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #777777;
+  margin-right: 12px;
+}
+
+.num {
+  width: 24px;
+}
+
+.name {
+  width: 300px;
+}
+
+.score {
+  width: 48px;
+  color: #4285f4;
+}
+
+.speed {
+  width: 112px;
+  color: #4285f4;
+}

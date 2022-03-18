@@ -1,0 +1,65 @@
+.labels{
+  margin-bottom: 12px;
+}
+
+.labelsBox {
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.title {
+  width: 40px;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #777777;
+  margin: 0;
+  margin-right: 20px;
+}
+
+.labelsBox p {
+  margin: 0;
+  margin-right: 24px;
+}
+
+.blue {
+  color: #4285f4;
+}
+
+.blue::before {
+  content: url("../../../assets/el_blue.svg");
+  padding-right: 8px;
+}
+
+.green {
+  color: #0f9d58;
+}
+
+.green::before {
+  content: url("../../../assets/el_green.svg");
+  padding-right: 8px;
+}
+
+.yellow {
+  color: #e2b534;
+}
+
+.yellow::before {
+  content: url("../../../assets/el_yellow.svg");
+  padding-right: 8px;
+}
+
+.red {
+  color: #db4437;
+}
+
+.red::before {
+  content: url("../../../assets/el_red.svg");
+  padding-right: 8px;
+}

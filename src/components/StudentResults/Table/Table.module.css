@@ -1,0 +1,7 @@
+.line {
+    display: inline-block;
+    width: 1100px;
+    margin: 0 auto;
+    border-bottom: 2px solid #a6192e;
+    margin-bottom: 10px;
+  }
