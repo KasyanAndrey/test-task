@@ -1,27 +1,28 @@
 import css from './Pagination.module.css';
 
-const Pagination = ({onForward, onBack }) => {
+const Pagination = ({ nextPage, prevPage, currentPage, itemsPerPage }) => {
   return (
     <div className={css.wrapper}>
       <div className={css.pagBox}>
         <div className={css.page}>
           <div className={css.title}>Rows per page: </div>
           <div className={css.numPage}>
-            10<span className={css.aroowduwn}></span>
+            {currentPage}
+            <span className={css.aroowduwn}></span>
           </div>
           <div className={css.arrowdawn}></div>
         </div>
-        <div className={css.item}>21-30 of 100</div>
+        <div className={css.item}>{itemsPerPage} of 100</div>
         <div className={css.arrowbox}>
           <button
             type="button"
             className={css.arrowleft}
-            onClick={() => onBack()}
+            onClick={() => prevPage()}
           ></button>
           <button
             type="button"
             className={css.arrowright}
-            onClick={() => onForward()}
+            onClick={() => nextPage()}
           ></button>
         </div>
       </div>

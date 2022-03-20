@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 // import { useState, useEffect } from 'react';
-import css from "./Spreadsheet.module.css";
+import css from './Spreadsheet.module.css';
 
-import Thead from "./Thead/Thead";
-import Tbody from "./Tbody/Tbody";
+import Thead from './Thead/Thead';
+import Tbody from './Tbody/Tbody';
 // import Tarhived from './Tarhived/Tarhived';
 // import StudentResults from '../StudentResults/StudentResults';
 
@@ -12,11 +12,13 @@ const Spreadsheet = ({ items }) => {
 
   return (
     <div className={css.wrapper}>
-      {/* <StudentResults items={items}/> */}
-      <Thead />
-      <Tbody items={items} />
-      <p className={css.title}>Archived</p>
-      {/* <Tarhived items={items} /> */}
+      <table>
+        {/* <StudentResults items={items}/> */}
+        <Thead />
+        <Tbody items={items} />
+        {/* <Tarhived items={items} /> */}
+      </table>
+        <p className={css.title}>Archived</p>
     </div>
   );
 };

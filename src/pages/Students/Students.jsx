@@ -13,7 +13,9 @@ const Students = () => {
   const [students, setStudents] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const [itemsPerPage] = useState(10);
+  const [totalItems, setTotalItems] = useState(0);
+  // const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -22,49 +24,66 @@ const Students = () => {
     }
 
     const fetchStudents = () => {
-      QueryApi({ searchQuery, currentPage, pageSize })
+      // setIsLoading(true);
+      QueryApi({ searchQuery, currentPage, itemsPerPage })
         .then(items => {
           if (items.length === 0) {
             setError(true);
             return;
           }
 
+          setTotalItems(items.length);
           setStudents(state => [...state, ...items]);
         })
-        .catch(error => setError(error));
+        .catch(error => setError(error))
+        .finally(() => {
+          // setIsLoading(false);
+
+          window.scrollTo({
+            top: document.documentElement.scrollHeight,
+            behavior: 'smooth',
+          });
+        });
     };
 
     fetchStudents();
-  }, [searchQuery, currentPage, pageSize]);
-  
+  }, [searchQuery, currentPage, itemsPerPage]);
+
+  // console.log(students);
+
   const handleFormSubmit = query => {
     setSearchQuery(query);
     setStudents([]);
     setCurrentPage(1);
-    setPageSize(10);
     setError(error);
   };
-  debugger;
 
-  const handleArrowForward = ()=> {
-    setCurrentPage(state => state + 1);
-    setPageSize(state => state + 10);
-  };
+  const indexOfLastItem = currentPage + itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = students.slice(indexOfFirstItem, indexOfLastItem);
 
-  const handleArrowBack = () => {
-    setCurrentPage(state => state - 1);
-    setPageSize(state => state - 10);
-  };
+  const paginate = pageNum => setCurrentPage(pageNum);
+  const nextPage = () => setCurrentPage(currentPage + 1);
+  const prevPage = () => setCurrentPage(currentPage - 1);
 
   return (
     <section className={css.section}>
       <Filter />
       <Headline onSubmit={handleFormSubmit} />
-      {students && <Spreadsheet items={students} />}
+      {students && (
+        <Spreadsheet
+          items={currentItems}
+          paginate={paginate}
+          itemsPerPage={itemsPerPage}
+          currentPage={currentPage}
+          totalItems={totalItems}
+        />
+      )}
       <Pagination
-        items={students}
-        onForward={handleArrowForward}
-        onBack={handleArrowBack}
+        currentPage={currentPage}
+        itemsPerPage={itemsPerPage}
+        nextPage={nextPage}
+        prevPage={prevPage}
       />
     </section>
   );

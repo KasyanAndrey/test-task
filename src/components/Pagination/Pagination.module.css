@@ -33,7 +33,7 @@
   align-items: center;
   width: 24px;
   height: 24px;
-  background-image: url("../../assets/arrow_drop_down.svg");
+  background-image: url('../../assets/arrow_drop_down.svg');
   background-repeat: no-repeat;
   cursor: pointer;
 }
@@ -53,16 +53,18 @@
   display: inline-flex;
   width: 9px;
   height: 16px;
-  background-image: url("../../assets/arrowleft.svg");
+  background-image: url('../../assets/arrowleft.svg');
   background-repeat: no-repeat;
   cursor: pointer;
+  outline: none;
 }
 
 .arrowright {
   display: inline-flex;
   width: 9px;
   height: 16px;
-  background-image: url("../../assets/arrowright.svg");
+  background-image: url('../../assets/arrowright.svg');
   background-repeat: no-repeat;
   cursor: pointer;
+  outline: none;
 }
