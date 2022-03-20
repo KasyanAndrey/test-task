@@ -1,6 +1,15 @@
-import css from "./Tbody.module.css";
+import css from './Tbody.module.css';
+import { useState } from 'react';
+
+import StudentResults from '../../StudentResults/StudentResults';
 
 const Tbody = ({ items }) => {
+  const [showItems, setShowItems] = useState(false);
+
+  const toglItem = () => {
+    setShowItems(prevState => !prevState);
+  };
+
   return (
     <tbody className={css.tbody}>
       {items.map(({ name, id, classs, score, speed, parents }) => (
@@ -26,11 +35,12 @@ const Tbody = ({ items }) => {
           <td className={`${css.td} ${css.parents}`}>{parents}</td>
           <td className={css.td}>
             <div className={css.action}>
-              <span className={css.arrowAction}></span>
+              <span className={css.arrowAction} onClick={toglItem}></span>
             </div>
           </td>
         </tr>
       ))}
+      {showItems && <StudentResults items={items} />}
     </tbody>
   );
 };

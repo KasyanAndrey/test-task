@@ -1,5 +1,6 @@
 .tr {
   display: flex;
+  width: 1280px;
 }
 
 .checkbox {
@@ -17,7 +18,7 @@
   display: inline-block;
   width: 12px;
   height: 12px;
-  background-image: url("../../../assets/az.svg");
+  background-image: url('../../../assets/az.svg');
   background-repeat: no-repeat;
   cursor: pointer;
 }
@@ -33,7 +34,7 @@
   display: inline-block;
   width: 6px;
   height: 12px;
-  background-image: url("../../../assets/table_arrow.svg");
+  background-image: url('../../../assets/table_arrow.svg');
   background-repeat: no-repeat;
   cursor: pointer;
 }
@@ -62,23 +63,23 @@
 
 .action {
   width: 100px;
+  text-align: end;
 }
 
 .arrowAction {
   display: inline-block;
   width: 24px;
   height: 24px;
-  background-image: url("../../../assets/arrow_drop_down.svg");
+  background-image: url('../../../assets/arrow_drop_down.svg');
   background-repeat: no-repeat;
   cursor: pointer;
 }
 
 .td {
   height: 48px;
-  display: inline-block;
   margin-right: 24px;
-  text-align: start;
-  color: #C0C0C0;
+  color: #c0c0c0;
   font-size: 14px;
   font-weight: 400;
+  background-color: #f9f9f9;
 }

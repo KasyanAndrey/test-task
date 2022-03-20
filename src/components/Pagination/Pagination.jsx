@@ -1,6 +1,6 @@
-import css from "./Pagination.module.css";
+import css from './Pagination.module.css';
 
-const Pagination = () => {
+const Pagination = ({onForward, onBack }) => {
   return (
     <div className={css.wrapper}>
       <div className={css.pagBox}>
@@ -13,8 +13,16 @@ const Pagination = () => {
         </div>
         <div className={css.item}>21-30 of 100</div>
         <div className={css.arrowbox}>
-          <span className={css.arrowleft}></span>
-          <span className={css.arrowright}></span>
+          <button
+            type="button"
+            className={css.arrowleft}
+            onClick={() => onBack()}
+          ></button>
+          <button
+            type="button"
+            className={css.arrowright}
+            onClick={() => onForward()}
+          ></button>
         </div>
       </div>
     </div>

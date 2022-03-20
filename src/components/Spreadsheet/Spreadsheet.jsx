@@ -1,19 +1,22 @@
 import React from "react";
+// import { useState, useEffect } from 'react';
 import css from "./Spreadsheet.module.css";
 
 import Thead from "./Thead/Thead";
 import Tbody from "./Tbody/Tbody";
-import Tarhived from './Tarhived/Tarhived';
-import StudentResults from '../StudentResults/StudentResults';
+// import Tarhived from './Tarhived/Tarhived';
+// import StudentResults from '../StudentResults/StudentResults';
 
 const Spreadsheet = ({ items }) => {
+  // debugger;
+
   return (
     <div className={css.wrapper}>
-      <StudentResults items={items}/>
+      {/* <StudentResults items={items}/> */}
       <Thead />
       <Tbody items={items} />
       <p className={css.title}>Archived</p>
-      <Tarhived items={items} />
+      {/* <Tarhived items={items} /> */}
     </div>
   );
 };

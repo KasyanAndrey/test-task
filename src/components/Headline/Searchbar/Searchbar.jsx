@@ -1,17 +1,35 @@
-import React from "react";
-import css from "./Searchbar.module.css";
+import React from 'react';
+import { useState } from 'react';
+import css from './Searchbar.module.css';
 
-const Searchbar = () => {
+const Searchbar = ({ onSubmit }) => {
+  const [query, setQuery] = useState('');
+
+  const handleChange = event => {
+    setQuery(event.currentTarget.value);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    if (query.trim() === '') {
+      return;
+    }
+
+    onSubmit(query);
+    setQuery('');
+  };
+
   return (
     <div className={css.wrapper}>
-      <form /* onSubmit={handleSubmit} */ className={css.form}>
+      <form onSubmit={handleSubmit} className={css.form}>
         <input
           className={css.input}
           type="text"
           name="searchQuery"
-          placeholder="Enter Student Name, Parent or ID here"
-          // value={query}
-          // onChange={handleChange}
+          placeholder="Enter Student Name"
+          value={query}
+          onChange={handleChange}
           autoComplete="off"
         />
 

@@ -1,14 +1,11 @@
-// import axios from 'axios';
+import axios from 'axios'
 
-// const API_KEY = '20167067-fa9a23327fba47dd7ecb29229';
-// const BASE_URL = 'https://pixabay.com/api/';
+const BASE_URL = 'https://test-task-j.herokuapp.com/data';
 
-// const fetchImages = ({ searchQuery = '', currentPage = 1, pageSize = 12 }) => {
-//   return axios
-//     .get(
-//       `${BASE_URL}?q=${searchQuery}&page=${currentPage}&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=${pageSize}`,
-//     )
-//     .then(response => response.data.hits);
-// };
-
-// export default { fetchImages };
+export const QueryApi = ({ searchQuery = '', currentPage = 1, pageSize = 10 }) => {
+  return axios
+    .get(
+      `${BASE_URL}?page=${currentPage}&size=${pageSize}&search=${searchQuery}`,
+    )
+    .then(response => response.data.data);
+};
