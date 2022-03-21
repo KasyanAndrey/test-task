@@ -13,7 +13,7 @@ const Students = () => {
   const [students, setStudents] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(10);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
   const [totalItems, setTotalItems] = useState(0);
   // const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -49,8 +49,6 @@ const Students = () => {
     fetchStudents();
   }, [searchQuery, currentPage, itemsPerPage]);
 
-  // console.log(students);
-
   const handleFormSubmit = query => {
     setSearchQuery(query);
     setStudents([]);
@@ -63,27 +61,30 @@ const Students = () => {
   const currentItems = students.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = pageNum => setCurrentPage(pageNum);
-  const nextPage = () => setCurrentPage(currentPage + 1);
-  const prevPage = () => setCurrentPage(currentPage - 1);
+
+  const handlNextPage = () => {
+    setCurrentPage(currentPage + 1);
+    setItemsPerPage(itemsPerPage + 10);
+  };
+
+  const handlPrevPage = () => {
+    setCurrentPage(currentPage - 1);
+    setItemsPerPage(itemsPerPage - 10);
+  };
 
   return (
     <section className={css.section}>
       <Filter />
       <Headline onSubmit={handleFormSubmit} />
-      {students && (
-        <Spreadsheet
-          items={currentItems}
-          paginate={paginate}
-          itemsPerPage={itemsPerPage}
-          currentPage={currentPage}
-          totalItems={totalItems}
-        />
-      )}
+      {students && <Spreadsheet items={currentItems} />}
       <Pagination
+        items={currentItems}
         currentPage={currentPage}
         itemsPerPage={itemsPerPage}
-        nextPage={nextPage}
-        prevPage={prevPage}
+        totalItems={totalItems}
+        paginate={paginate}
+        nextPage={handlNextPage}
+        prevPage={handlPrevPage}
       />
     </section>
   );

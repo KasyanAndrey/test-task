@@ -28,7 +28,7 @@
   align-items: center;
 }
 
-.aroowduwn {
+/* .aroowduwn {
   display: inline-flex;
   align-items: center;
   width: 24px;
@@ -36,7 +36,7 @@
   background-image: url('../../assets/arrow_drop_down.svg');
   background-repeat: no-repeat;
   cursor: pointer;
-}
+} */
 
 .item {
   display: flex;
@@ -51,6 +51,8 @@
 
 .arrowleft {
   display: inline-flex;
+  border: none;
+  background-color: transparent;
   width: 9px;
   height: 16px;
   background-image: url('../../assets/arrowleft.svg');
@@ -61,6 +63,8 @@
 
 .arrowright {
   display: inline-flex;
+  border: none;
+  background-color: transparent;
   width: 9px;
   height: 16px;
   background-image: url('../../assets/arrowright.svg');

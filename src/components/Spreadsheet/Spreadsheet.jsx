@@ -9,7 +9,6 @@ import Tbody from './Tbody/Tbody';
 
 const Spreadsheet = ({ items }) => {
   // debugger;
-
   return (
     <div className={css.wrapper}>
       <table>
@@ -23,3 +22,5 @@ const Spreadsheet = ({ items }) => {
   );
 };
 export default Spreadsheet;
+
+/* , paginate, itemsPerPage, currentPage, totalItems */

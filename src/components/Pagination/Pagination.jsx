@@ -1,6 +1,14 @@
 import css from './Pagination.module.css';
+import { Dropdown } from '../Dropdown/Dropdown ';
 
-const Pagination = ({ nextPage, prevPage, currentPage, itemsPerPage }) => {
+const Pagination = ({
+  nextPage,
+  prevPage,
+  currentPage,
+  itemsPerPage,
+  totalItems,
+  paginate,
+}) => {
   return (
     <div className={css.wrapper}>
       <div className={css.pagBox}>
@@ -8,7 +16,13 @@ const Pagination = ({ nextPage, prevPage, currentPage, itemsPerPage }) => {
           <div className={css.title}>Rows per page: </div>
           <div className={css.numPage}>
             {currentPage}
-            <span className={css.aroowduwn}></span>
+            <Dropdown
+              currentPage={currentPage}
+              itemsPerPage={itemsPerPage}
+              totalItems={totalItems}
+              paginate={paginate}
+              prevPage={prevPage}
+            />
           </div>
           <div className={css.arrowdawn}></div>
         </div>
