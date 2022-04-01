@@ -1,4 +1,9 @@
-.section{
-    width: 1360px;
-    margin: 0 auto;
+.section {
+  width: 1360px;
+  margin: 0 auto;
+}
+
+.loader {
+  text-align: center;
+  color: #a6192e;
 }

@@ -5,87 +5,74 @@ import css from './Students.module.css';
 
 import Filter from '../../components/Filter/Filter';
 import Headline from '../../components/Headline/Headline';
-import Spreadsheet from '../../components/Spreadsheet/Spreadsheet';
+import MainTable from '../../components/MainTable/MainTable';
 import Pagination from '../../components/Pagination/Pagination';
-import { QueryApi } from '../../services/QueryApi';
+import { StudentsApi } from '../../services/QueryApi';
 
 const Students = () => {
+  const [state, setState] = useState([]);
+  const [page, setPage] = useState(1);
+  const [size] = useState(10);
+  const [search, setSearch] = useState('');
+  const [sortBy, setSortBy] = useState([]);
+  const [sortDir, setSortDir] = useState(1);
+  const [loading, setLoading] = useState(false);
   const [students, setStudents] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(10);
-  const [totalItems, setTotalItems] = useState(0);
-  // const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [elemCount, setElemCount] = useState(10);
+  const [totalCount, setTotalCount] = useState(0);
+  const [totalPages, setTotalPages] = useState(1);
+  // const [indexStudent, setIndexStudent] = useState();
 
   useEffect(() => {
-    if (!searchQuery) {
-      return;
-    }
-
-    const fetchStudents = () => {
-      // setIsLoading(true);
-      QueryApi({ searchQuery, currentPage, itemsPerPage })
-        .then(items => {
-          if (items.length === 0) {
-            setError(true);
-            return;
-          }
-
-          setTotalItems(items.length);
-          setStudents(state => [...state, ...items]);
-        })
-        .catch(error => setError(error))
-        .finally(() => {
-          // setIsLoading(false);
-
-          window.scrollTo({
-            top: document.documentElement.scrollHeight,
-            behavior: 'smooth',
-          });
-        });
-    };
-
-    fetchStudents();
-  }, [searchQuery, currentPage, itemsPerPage]);
+    setLoading(true);
+    StudentsApi(page, size, search, sortBy, sortDir).then(response => {
+      setState(response.data);
+      setTotalCount(response.totalCount);
+      setTotalPages(response.totalPages);
+      setLoading(false);
+    });
+  }, [page, size, search, sortBy, sortDir]);
 
   const handleFormSubmit = query => {
-    setSearchQuery(query);
+    setSearch(query);
     setStudents([]);
-    setCurrentPage(1);
-    setError(error);
   };
 
-  const indexOfLastItem = currentPage + itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = students.slice(indexOfFirstItem, indexOfLastItem);
-
-  const paginate = pageNum => setCurrentPage(pageNum);
-
   const handlNextPage = () => {
-    setCurrentPage(currentPage + 1);
-    setItemsPerPage(itemsPerPage + 10);
+    if (page >= totalPages) {
+      return;
+    } else {
+      setPage(page + 1);
+      setElemCount(elemCount + 10);
+    }
   };
 
   const handlPrevPage = () => {
-    setCurrentPage(currentPage - 1);
-    setItemsPerPage(itemsPerPage - 10);
+    if (page <= 1) {
+      return;
+    } else {
+      setPage(page - 1);
+      setElemCount(elemCount - 10);
+    }
   };
-
   return (
     <section className={css.section}>
       <Filter />
       <Headline onSubmit={handleFormSubmit} />
-      {students && <Spreadsheet items={currentItems} />}
-      <Pagination
-        items={currentItems}
-        currentPage={currentPage}
-        itemsPerPage={itemsPerPage}
-        totalItems={totalItems}
-        paginate={paginate}
-        nextPage={handlNextPage}
-        prevPage={handlPrevPage}
-      />
+      {loading ? (
+        <h2 className={css.loader}>Loading...</h2>
+      ) : (
+        <>
+          <MainTable students={state} />
+          <Pagination
+            size={size}
+            elemCount={elemCount}
+            totalCount={totalCount}
+            prevPage={handlPrevPage}
+            nextPage={handlNextPage}
+          />
+        </>
+      )}
     </section>
   );
 };

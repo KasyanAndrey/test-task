@@ -2,15 +2,18 @@ import axios from 'axios'
 
 const BASE_URL = 'https://test-task-j.herokuapp.com/data';
 
-export const QueryApi = ({ searchQuery = '', currentPage = 1, perPage = 10 }) => {
+export const StudentsApi = ( page, size, search, sortBy, sortDir ) => {
   return axios
     .get(
-      `${BASE_URL}?page=${currentPage}&size=${perPage}&search=${searchQuery}`,
+      `${BASE_URL}?page=${page}&size=${size}&search=${search}&sortBy=${sortBy}&sortDir=${sortDir}`,
     )
-    .then(response => response.data.data);
+    .then(response => response.data);
 };
 
-/* 
-sortBy: string from [‘name’, ‘class’, ‘score’, ‘speed’]
-sortDir: int from [-1, 1] 
-*/
+// export const QueryApi = ( page, size, sortBy, sortDir ) => {
+//   return axios
+//     .get(
+//       `${BASE_URL}?page=${page}&size=${size}&sortBy=${sortBy}&sortDir=${sortDir}`,
+//     )
+//     .then(response => response.data);
+// };

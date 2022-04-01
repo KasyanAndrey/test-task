@@ -8,7 +8,7 @@ const Headline = ({ onSubmit }) => {
   return (
     <div className={css.wrapper}>
       <h1 className={css.title}>Students</h1>
-      <Searchbar onSubmit={onSubmit} />
+      <Searchbar onSubmit={onSubmit}/>
       <Uploadbar />
     </div>
   );

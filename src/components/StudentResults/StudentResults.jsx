@@ -1,19 +1,19 @@
-import React from "react";
-import css from "./StudentResults.module.css";
+import React from 'react';
+import css from './StudentResults.module.css';
 
-import InfoUser from "./InfoUser/InfoUser";
-import InfoSort from "./InfoSort/InfoSort";
-import Labels from "./Labels/Labels";
-import Table from "./Table/Table";
+import InfoUser from './InfoUser/InfoUser';
+import InfoSort from './InfoSort/InfoSort';
+import Labels from './Labels/Labels';
+import Table from './Table/Table';
 
-const StudentResults = ({ items }) => {
+const StudentResults = ({ students }) => {
   return (
     <div className={css.wrapper}>
-      <InfoUser items={items} />
+      <InfoUser items={students} />
       <InfoSort />
       <span className={css.line}></span>
       <Labels />
-      <Table items={items} />
+      <Table items={students} />
     </div>
   );
 };

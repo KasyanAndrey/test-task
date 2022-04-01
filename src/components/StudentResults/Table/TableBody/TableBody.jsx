@@ -1,14 +1,12 @@
-// import { useState } from 'react';
-import css from "./TableBody.module.css";
+import css from './TableBody.module.css';
 
-
-const TableBody = ({ items }) => {
+const TableBody = ({ students }) => {
   return (
     <tbody className={css.thead}>
-      {items.map(({ tests, id }) =>
+      {students.map(({ tests, id }) =>
         tests.map(
           (
-            { label, score, speed, total, expSpeed, concept, date, abcent },
+            { label, score, speed, total, expSpeed, concept, date },
             index
           ) => (
             <tr className={css.tr} key={id}>

@@ -3,18 +3,18 @@ import { useState } from 'react';
 
 import StudentResults from '../../StudentResults/StudentResults';
 
-const Tbody = ({ items }) => {
-  const [showItems, setShowItems] = useState(false);
+const Tbody = ({ students }) => {
+  const [loading, setIoading] = useState(false);
 
   const toglItem = () => {
-    setShowItems(prevState => !prevState);
+    setIoading(prevState => !prevState);
   };
 
   return (
     <tbody className={css.tbody}>
-      {items.map(({ name, id, classs, score, speed, parents }) => (
-        <tr className={css.tr} key={id}>
-          <td className={css.td}>
+      {students.map(({ name, id, classs, score, speed, parents }, index) => (
+        <tr className={css.tr} key={index}>
+          <td className={css.td} >
             <div className={css.checkbox}>
               <input type="checkbox" />
             </div>
@@ -25,14 +25,18 @@ const Tbody = ({ items }) => {
           <td className={css.td}>
             <div className={css.id}>{id}</div>
           </td>
-          <td className={`${css.td} ${css.class}`}>{classs}</td>
+          <td className={`${css.td} ${css.class}`}>
+            {classs}
+          </td>
           <td className={css.td}>
             <div className={css.score}>{score}</div>
           </td>
           <td className={css.td}>
             <div className={css.speed}>{speed}</div>
           </td>
-          <td className={`${css.td} ${css.parents}`}>{parents}</td>
+          <td className={`${css.td} ${css.parents}`}>
+            {parents}
+          </td>
           <td className={css.td}>
             <div className={css.action}>
               <span className={css.arrowAction} onClick={toglItem}></span>
@@ -40,7 +44,7 @@ const Tbody = ({ items }) => {
           </td>
         </tr>
       ))}
-      {showItems && <StudentResults items={items} />}
+      {loading && <StudentResults students={students} />}
     </tbody>
   );
 };

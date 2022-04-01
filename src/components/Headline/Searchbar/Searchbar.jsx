@@ -12,11 +12,8 @@ const Searchbar = ({ onSubmit }) => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (query.trim() === '') {
-      return;
-    }
-
     onSubmit(query);
+    event.target.reset();
     setQuery('');
   };
 
@@ -26,13 +23,11 @@ const Searchbar = ({ onSubmit }) => {
         <input
           className={css.input}
           type="text"
-          name="searchQuery"
           placeholder="Enter Student Name"
           value={query}
           onChange={handleChange}
           autoComplete="off"
         />
-
         <button type="submit" className={css.formBtn}>
           <span className={css.formBtnLabel}></span>
         </button>

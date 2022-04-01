@@ -1,10 +1,10 @@
 import React from "react";
 import css from "./InfoUser.module.css";
 
-const InfoUser = ({ items }) => {
+const InfoUser = ({ students }) => {
   return (
     <div className={css.infoUser}>
-      {items.map(({ name, id }) => (
+      {students.map(({ name, id }) => (
         <div className={css.user}>
           <div className={css.userItem}>
             STUDENT:
