@@ -5,13 +5,13 @@ import TableHead from './TableHead/TableHead';
 import TableBody from './TableBody/TableBody';
 import TestAverages from './TestAverages/TestAverages';
 
-const Table = ({ students }) => {
+const Table = ({ score, speed, tests }) => {
   return (
     <div className={css.wrapper}>
       <TableHead />
-      <TableBody students={students} />
+      <TableBody tests={tests} />
       <span className={css.line}></span>
-      <TestAverages />
+      <TestAverages  score={score} speed={speed}/>
     </div>
   );
 };

@@ -6,14 +6,14 @@ import InfoSort from './InfoSort/InfoSort';
 import Labels from './Labels/Labels';
 import Table from './Table/Table';
 
-const StudentResults = ({ students }) => {
+const StudentResults = ({ name, id, score, speed, tests }) => {
   return (
     <div className={css.wrapper}>
-      <InfoUser items={students} />
+      <InfoUser name={name} id={id} />
       <InfoSort />
       <span className={css.line}></span>
       <Labels />
-      <Table items={students} />
+      <Table score={score} speed={speed} tests={tests} />
     </div>
   );
 };

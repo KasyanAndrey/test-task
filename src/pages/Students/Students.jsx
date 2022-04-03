@@ -7,6 +7,7 @@ import Filter from '../../components/Filter/Filter';
 import Headline from '../../components/Headline/Headline';
 import MainTable from '../../components/MainTable/MainTable';
 import Pagination from '../../components/Pagination/Pagination';
+// import StudentResults from '../../components/StudentResults/StudentResults'
 import { StudentsApi } from '../../services/QueryApi';
 
 const Students = () => {
@@ -17,11 +18,11 @@ const Students = () => {
   const [sortBy, setSortBy] = useState([]);
   const [sortDir, setSortDir] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [students, setStudents] = useState([]);
+  const [student, setStudent] = useState([]);
   const [elemCount, setElemCount] = useState(10);
   const [totalCount, setTotalCount] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
-  // const [indexStudent, setIndexStudent] = useState();
+  const [indexStudent, setIndexStudent] = useState();
 
   useEffect(() => {
     setLoading(true);
@@ -35,7 +36,7 @@ const Students = () => {
 
   const handleFormSubmit = query => {
     setSearch(query);
-    setStudents([]);
+    setStudent([]);
   };
 
   const handlNextPage = () => {
@@ -59,11 +60,12 @@ const Students = () => {
     <section className={css.section}>
       <Filter />
       <Headline onSubmit={handleFormSubmit} />
+      {/* <StudentResults students={students} /> */}
       {loading ? (
         <h2 className={css.loader}>Loading...</h2>
       ) : (
         <>
-          <MainTable students={state} />
+          <MainTable students={state}/>
           <Pagination
             size={size}
             elemCount={elemCount}
