@@ -1,22 +1,50 @@
 import css from './Tbody.module.css';
-import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
 
-import StudentResults from '../../StudentResults/StudentResults';
 
-const Tbody = ({ index, name, id, classs, score, speed, parents, tests }) => {
+import StudentResults from '../../StudentResults/StudentResults';
+import { colorFilterScore, colorFilterSpeed } from '../../../helpers/colors';
+
+const Tbody = ({
+  name,
+  id,
+  classs,
+  score,
+  speed,
+  parents,
+  tests,
+  handleClick,
+  isChecked
+}) => {
   const [loading, setIoading] = useState(false);
+  // const [isCheck, setIsCheck] = useState([]);
+  // const [selected, setSelected] = useState(false);
 
   const toglItem = () => {
     setIoading(prevState => !prevState);
   };
 
+  // const handleClick = event => {
+  //   const { id, checked } = event.target;
+  //   setIsCheck([...isCheck, id]);
+  //   if (!checked) {
+  //     setIsCheck(isCheck.filter(item => item !== id));
+  //   }
+  // };
+  // console.log(isCheck);
+
   return (
     <tbody className={css.tbody}>
-      <tr className={css.tr} key={uuidv4()}>
+      <tr className={css.tr}>
         <td className={css.td}>
           <div className={css.checkbox}>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              name={name}
+              id={id}
+              onChange={handleClick}
+              checked={isChecked.includes(id)}
+            />
           </div>
         </td>
         <td className={css.td}>
@@ -27,10 +55,14 @@ const Tbody = ({ index, name, id, classs, score, speed, parents, tests }) => {
         </td>
         <td className={`${css.td} ${css.class}`}>{classs}</td>
         <td className={css.td}>
-          <div className={css.score}>{score}</div>
+          <div className={css.score} style={{ color: colorFilterScore(score) }}>
+            {score}
+          </div>
         </td>
         <td className={css.td}>
-          <div className={css.speed}>{speed}</div>
+          <div className={css.speed} style={{ color: colorFilterSpeed(speed) }}>
+            {speed}
+          </div>
         </td>
         <td className={`${css.td} ${css.parents}`}>{parents.join(', ')}</td>
         <td className={css.td}>
@@ -48,7 +80,6 @@ const Tbody = ({ index, name, id, classs, score, speed, parents, tests }) => {
             speed={speed}
             tests={tests}
             onClose={toglItem}
-            index={index}
           />
         </tr>
       )}

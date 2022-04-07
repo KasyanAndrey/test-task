@@ -1,12 +1,19 @@
-import css from "./Thead.module.css";
+import css from './Thead.module.css';
 
-const Thead = () => {
+const Thead = ({ handleSelectAll, isCheckedAll }) => {
   return (
     <thead className={css.thead}>
       <tr className={css.tr}>
         <th className={css.th}>
           <div className={css.checkbox}>
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              id="selectAll"
+              name="selectAll"
+              checked={isCheckedAll}
+              onChange={handleSelectAll}
+            />
+            <label htmlFor="allSelect"></label>
           </div>
         </th>
         <th className={css.th}>
@@ -30,7 +37,7 @@ const Thead = () => {
             Av.Speed<span className={css.arrow}></span>
           </div>
         </th>
-        <th className={`${css.th} ${css.parents}`}>Parents</th>        
+        <th className={`${css.th} ${css.parents}`}>Parents</th>
         <th className={`${css.th} ${css.actions}`}>Actions</th>
       </tr>
     </thead>

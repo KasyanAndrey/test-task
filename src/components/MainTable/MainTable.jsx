@@ -7,24 +7,30 @@ import Thead from './Thead/Thead';
 import Tbody from './Tbody/Tbody';
 // import Tarhived from './Tarhived/Tarhived';
 
-const MainTable = ({ students }) => {
+const MainTable = ({ students, handleClick, isChecked, handleSelectAll, isCheckedAll }) => {
   return (
     <div className={css.wrapper}>
       <table>
-        <Thead />
+        <Thead
+          handleSelectAll={handleSelectAll} isCheckedAll={isCheckedAll}
+        />
         {students.map((student, index) => (
           <Tbody
+            key={uuidv4()}
             index={index}
+            students={students}
             name={student.name}
             id={student.id}
-            class={student.class}
+            classs={student.class}
             score={student.score}
             speed={student.speed}
             parents={student.parents}
             tests={student.tests}
+            handleClick={handleClick}
+            isChecked={isChecked}
+            
           />
         ))}
-
         {/* <Tarhived items={items} /> */}
       </table>
       <p className={css.title}>Archived</p>

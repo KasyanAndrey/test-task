@@ -13,7 +13,6 @@ const Searchbar = ({ onSubmit }) => {
     event.preventDefault();
 
     onSubmit(query);
-    event.target.reset();
     setQuery('');
   };
 
