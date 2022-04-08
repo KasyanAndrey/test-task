@@ -17,16 +17,12 @@ const Students = () => {
   const [search, setSearch] = useState('');
   const [sortBy, setSortBy] = useState([]);
   const [sortDir, setSortDir] = useState(1);
+  
   const [loading, setLoading] = useState(false);
-  // const [student, setStudent] = useState(false);
   const [elemCount, setElemCount] = useState(10);
   const [totalCount, setTotalCount] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
-  // const [indexStudent, setIndexStudent] = useState();
-  const [isCheckAll, setIsCheckAll] = useState(false);
-  const [isCheck, setIsCheck] = useState([]);
-  const [onCheckEl, setOnCheckEl] = useState(false);
-
+  const [isChacked, setIsChacked] = useState(false)
 
   useEffect(() => {
     setLoading(true);
@@ -38,6 +34,7 @@ const Students = () => {
     });
   }, [page, size, search, sortBy, sortDir]);
 
+  
   const handleFormSubmit = query => {
     setSearch(query);
     setState([]);
@@ -60,38 +57,54 @@ const Students = () => {
       setElemCount(elemCount - 10);
     }
   };
-
-  const handleSelectAll = event => {
-    setIsCheckAll(!isCheckAll);
-    setIsCheck(state.map(el => el.id));
-    if (isCheckAll) {
-      setIsCheck([]);
-    }
+  
+  const allChecked = state.every(({ checked }) => checked);
+// debugger
+  const handleUpdatePage = () => {
+    setState(state);
+    setPage(1);
+    setElemCount(10);
   };
 
-  const handleClick = event => {
-    const { id, checked } = event.target;
-    setOnCheckEl(!onCheckEl)
-    setIsCheck([...isCheck, id]);
-    if (!checked) {
-      setIsCheck(isCheck.filter(el => el !== id));
-    }
+  const checkAll = () => {
+    setState(state => {
+      return state.map(item => ({
+        ...item,
+        checked: !allChecked,
+      }));
+    });
   };
 
+  const checkCur = (idx) => {
+    setState(state => {
+      return state.map((item, index) => {
+        if (index === idx) {
+          return {
+            ...item,
+            checked: !item.checked,
+          };
+        }
+        return item;
+      });
+    });
+  };
+  // debugger
   return (
     <section className={css.section}>
       <Filter />
-      <Headline onSubmit={handleFormSubmit} />
+      <Headline
+        onSubmit={handleFormSubmit}
+        handleUpdatePage={handleUpdatePage}
+      />
       {loading ? (
         <h2 className={css.loader}>Loading...</h2>
       ) : (
         <>
           <MainTable
             students={state}
-            handleSelectAll={handleSelectAll}
-            isCheckedAll={isCheckAll}
-            handleClick={handleClick}
-            isChecked={isCheck}
+            isCheckedCheckbox={allChecked}
+            checkAll={checkAll}
+            checkCur={checkCur}
           />
           <Pagination
             size={size}

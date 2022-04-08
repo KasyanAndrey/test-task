@@ -1,11 +1,12 @@
 import css from './Tbody.module.css';
 import { useState } from 'react';
 
-
 import StudentResults from '../../StudentResults/StudentResults';
 import { colorFilterScore, colorFilterSpeed } from '../../../helpers/colors';
+import { Checkbox } from '../../Checkbox/Checkbox';
 
 const Tbody = ({
+  student,
   name,
   id,
   classs,
@@ -13,37 +14,24 @@ const Tbody = ({
   speed,
   parents,
   tests,
-  handleClick,
-  isChecked
+  index,
+  checkCur
 }) => {
   const [loading, setIoading] = useState(false);
-  // const [isCheck, setIsCheck] = useState([]);
-  // const [selected, setSelected] = useState(false);
 
   const toglItem = () => {
     setIoading(prevState => !prevState);
   };
-
-  // const handleClick = event => {
-  //   const { id, checked } = event.target;
-  //   setIsCheck([...isCheck, id]);
-  //   if (!checked) {
-  //     setIsCheck(isCheck.filter(item => item !== id));
-  //   }
-  // };
-  // console.log(isCheck);
-
+// debugger
   return (
     <tbody className={css.tbody}>
       <tr className={css.tr}>
         <td className={css.td}>
           <div className={css.checkbox}>
-            <input
-              type="checkbox"
-              name={name}
-              id={id}
-              onChange={handleClick}
-              checked={isChecked.includes(id)}
+            <Checkbox
+              checked={student.checked}
+              index={index}
+              onChangeHandler={checkCur}
             />
           </div>
         </td>

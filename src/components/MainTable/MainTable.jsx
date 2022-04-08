@@ -2,22 +2,30 @@ import React from 'react';
 import css from './MainTable.module.css';
 import { v4 as uuidv4 } from 'uuid';
 
-
 import Thead from './Thead/Thead';
 import Tbody from './Tbody/Tbody';
 // import Tarhived from './Tarhived/Tarhived';
 
-const MainTable = ({ students, handleClick, isChecked, handleSelectAll, isCheckedAll }) => {
+const MainTable = ({
+  students,
+  isCheckedCheckbox,
+  checkAll,
+  checkCur
+
+}) => {
   return (
     <div className={css.wrapper}>
       <table>
         <Thead
-          handleSelectAll={handleSelectAll} isCheckedAll={isCheckedAll}
+          isCheckedCheckbox={isCheckedCheckbox}
+          checkAll={checkAll}
+
         />
         {students.map((student, index) => (
           <Tbody
             key={uuidv4()}
             index={index}
+            student={student}
             students={students}
             name={student.name}
             id={student.id}
@@ -26,12 +34,10 @@ const MainTable = ({ students, handleClick, isChecked, handleSelectAll, isChecke
             speed={student.speed}
             parents={student.parents}
             tests={student.tests}
-            handleClick={handleClick}
-            isChecked={isChecked}
-            
+            checkCur={checkCur}
           />
         ))}
-        {/* <Tarhived items={items} /> */}
+        {/* <Tarhived /> */}
       </table>
       <p className={css.title}>Archived</p>
     </div>
