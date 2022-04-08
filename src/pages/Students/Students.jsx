@@ -2,27 +2,26 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 
 import css from './Students.module.css';
+import { StudentsApi } from '../../services/QueryApi';
 
 import Filter from '../../components/Filter/Filter';
 import Headline from '../../components/Headline/Headline';
 import MainTable from '../../components/MainTable/MainTable';
 import Pagination from '../../components/Pagination/Pagination';
-// import StudentResults from '../../components/StudentResults/StudentResults'
-import { StudentsApi } from '../../services/QueryApi';
 
 const Students = () => {
   const [state, setState] = useState([]);
+
   const [page, setPage] = useState(1);
   const [size] = useState(10);
   const [search, setSearch] = useState('');
   const [sortBy, setSortBy] = useState([]);
   const [sortDir, setSortDir] = useState(1);
-  
+
   const [loading, setLoading] = useState(false);
   const [elemCount, setElemCount] = useState(10);
   const [totalCount, setTotalCount] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
-  const [isChacked, setIsChacked] = useState(false)
 
   useEffect(() => {
     setLoading(true);
@@ -34,7 +33,12 @@ const Students = () => {
     });
   }, [page, size, search, sortBy, sortDir]);
 
-  
+  const handleUpdatePage = () => {
+    setState(state);
+    setPage(1);
+    setElemCount(10);
+  };
+
   const handleFormSubmit = query => {
     setSearch(query);
     setState([]);
@@ -57,14 +61,8 @@ const Students = () => {
       setElemCount(elemCount - 10);
     }
   };
-  
+
   const allChecked = state.every(({ checked }) => checked);
-// debugger
-  const handleUpdatePage = () => {
-    setState(state);
-    setPage(1);
-    setElemCount(10);
-  };
 
   const checkAll = () => {
     setState(state => {
@@ -75,7 +73,7 @@ const Students = () => {
     });
   };
 
-  const checkCur = (idx) => {
+  const checkCur = idx => {
     setState(state => {
       return state.map((item, index) => {
         if (index === idx) {
@@ -88,7 +86,7 @@ const Students = () => {
       });
     });
   };
-  // debugger
+
   return (
     <section className={css.section}>
       <Filter />

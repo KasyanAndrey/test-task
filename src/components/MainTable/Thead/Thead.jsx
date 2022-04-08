@@ -1,16 +1,15 @@
 import css from './Thead.module.css';
 
-import { Checkbox } from '../../Checkbox/Checkbox';
-
 const Thead = ({ isCheckedCheckbox, checkAll }) => {
   return (
     <thead className={css.thead}>
       <tr className={css.tr}>
         <th className={css.th}>
           <div className={css.checkbox}>
-            <Checkbox
+            <input
+              type="checkbox"
               checked={isCheckedCheckbox}
-              onChangeHandler={checkAll}
+              onChange={checkAll}
             />
           </div>
         </th>

@@ -1,9 +1,8 @@
-import css from './Tbody.module.css';
 import { useState } from 'react';
+import css from './Tbody.module.css';
 
 import StudentResults from '../../StudentResults/StudentResults';
 import { colorFilterScore, colorFilterSpeed } from '../../../helpers/colors';
-import { Checkbox } from '../../Checkbox/Checkbox';
 
 const Tbody = ({
   student,
@@ -15,23 +14,24 @@ const Tbody = ({
   parents,
   tests,
   index,
-  checkCur
+  checkCur,
 }) => {
   const [loading, setIoading] = useState(false);
 
   const toglItem = () => {
     setIoading(prevState => !prevState);
   };
-// debugger
+
   return (
     <tbody className={css.tbody}>
       <tr className={css.tr}>
         <td className={css.td}>
           <div className={css.checkbox}>
-            <Checkbox
+            <input
+              type="checkbox"
               checked={student.checked}
               index={index}
-              onChangeHandler={checkCur}
+              onChange={() => checkCur(index)}
             />
           </div>
         </td>
