@@ -1,0 +1,98 @@
+.wrapper {
+  height: 48px;
+  padding: 0px 40px;
+  margin-bottom: 14px;
+  background-color: #c0c0c0;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.title {
+  width: 219px;
+  height: 20px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.selectedBar {
+  display: flex;
+  justify-content: space-between;
+  text-align: end;
+  width: 413px;
+  height: 17px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.btnCancel {
+  position: relative;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 141px;
+  height: 17px;
+  color: #ffffff;
+}
+
+.iconBtnCancel {
+  position: absolute;
+  bottom: -4px;
+  left: 10px;
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  background-image: url('../../assets/cancel_btn.svg');
+  background-repeat: no-repeat;
+}
+
+.btnExport {
+  position: relative;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 98px;
+  height: 17px;
+  background-color: transparent;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.iconBtnExport {
+  position: absolute;
+  bottom: -4px;
+  left: 10px;
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  background-image: url('../../assets/upload_selectedbar.svg');
+  background-repeat: no-repeat;
+}
+
+.btnArchive {
+  position: relative;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 142px;
+  height: 17px;
+  color: #424242;
+}
+
+.iconBtnArchive {
+  position: absolute;
+  bottom: -2px;
+  left: 10px;
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  background-image: url('../../assets/selecet_archive.svg');
+  background-repeat: no-repeat;
+}

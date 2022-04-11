@@ -6,11 +6,11 @@ import Thead from './Thead/Thead';
 import Tbody from './Tbody/Tbody';
 // import Tarhived from './Tarhived/Tarhived';
 
-const MainTable = ({ students, isCheckedCheckbox, checkAll, checkCur }) => {
+const MainTable = ({ students, sortByStudents,  isCheckedCheckbox, checkAll, checkCur }) => {
   return (
     <div className={css.wrapper}>
       <table>
-        <Thead isCheckedCheckbox={isCheckedCheckbox} checkAll={checkAll} />
+        <Thead isCheckedCheckbox={isCheckedCheckbox} checkAll={checkAll} sortByStudents={sortByStudents} />
         {students.map((student, index) => (
           <Tbody
             key={uuidv4()}

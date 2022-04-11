@@ -1,12 +1,16 @@
-import React from "react";
-import css from "./Uploadbar.module.css";
+import React from 'react';
+import css from './Uploadbar.module.css';
+import { CSVLink } from 'react-csv';
+import { headers } from '../../../helpers/headers';
 
-const Uploadbar = () => {
+const Uploadbar = ({ state }) => {
   return (
     <div className={css.wrapper}>
-      <button className={css.uploadBtn}>
-        <span className={css.iconBtn}></span>Export csv
-      </button>
+      <CSVLink className={css.uploadBtn} headers={headers} data={state} separator={';'}>
+        {/* <button className={css.uploadBtn}> */}
+          <span className={css.iconBtn}></span>Export csv
+        {/* </button> */}
+      </CSVLink>
     </div>
   );
 };

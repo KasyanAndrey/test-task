@@ -39,7 +39,10 @@
 }
 
 .class {
-  width: 40px;
+  width: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .score {

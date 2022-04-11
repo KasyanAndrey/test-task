@@ -1,11 +1,18 @@
-export const Checkbox = ({ checked, onChangeHandler, idx }) => {
+import React from "react";
+import s from "./Checkbox.module.css";
+
+let Checkbox = ({ handleClick, isChecked }) => {
   return (
     <div>
-      <input
-        type="checkbox"
-        checked={checked}
-        onChange={() => onChangeHandler(idx)}
-      />
+      <label>
+        <input
+          type="checkbox"
+          onChange={() => handleClick()}
+          checked={isChecked}
+        />
+      </label>
     </div>
   );
 };
+
+export default Checkbox;
