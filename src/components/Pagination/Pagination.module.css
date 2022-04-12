@@ -28,16 +28,6 @@
   align-items: center;
 }
 
-/* .aroowduwn {
-  display: inline-flex;
-  align-items: center;
-  width: 24px;
-  height: 24px;
-  background-image: url('../../assets/arrow_drop_down.svg');
-  background-repeat: no-repeat;
-  cursor: pointer;
-} */
-
 .item {
   display: flex;
   width: 100px;

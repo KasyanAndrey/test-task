@@ -4,7 +4,6 @@ import { CSVLink } from 'react-csv';
 import { headers } from '../../helpers/headers';
 
 const Selectedline = ({ state, cancelSelected, choseStudet }) => {
-  // debugger
   return (
     <div className={css.wrapper}>
       <p className={css.title}>{choseStudet()} Student selected</p>
@@ -12,8 +11,13 @@ const Selectedline = ({ state, cancelSelected, choseStudet }) => {
         <batton className={css.btnCancel} onClick={() => cancelSelected()}>
           <span className={css.iconBtnCancel}></span>cancel selection
         </batton>
-        <CSVLink className={css.btnExport} headers={headers} data={state} separator={';'}>
-            <span className={css.iconBtnExport}></span>export csv
+        <CSVLink
+          className={css.btnExport}
+          headers={headers}
+          data={state}
+          separator={';'}
+        >
+          <span className={css.iconBtnExport}></span>export csv
         </CSVLink>
         <batton className={css.btnArchive}>
           <span className={css.iconBtnArchive}></span>archive selected
