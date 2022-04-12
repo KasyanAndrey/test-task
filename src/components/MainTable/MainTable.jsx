@@ -6,11 +6,21 @@ import Thead from './Thead/Thead';
 import Tbody from './Tbody/Tbody';
 // import Tarhived from './Tarhived/Tarhived';
 
-const MainTable = ({ students, sortByStudents,  isCheckedCheckbox, checkAll, checkCur }) => {
+const MainTable = ({
+  students,
+  sortByStudents,
+  isCheckedCheckbox,
+  checkAll,
+  checkCur,
+}) => {
   return (
     <div className={css.wrapper}>
       <table>
-        <Thead isCheckedCheckbox={isCheckedCheckbox} checkAll={checkAll} sortByStudents={sortByStudents} />
+        <Thead
+          isCheckedCheckbox={isCheckedCheckbox}
+          checkAll={checkAll}
+          sortByStudents={sortByStudents}
+        />
         {students.map((student, index) => (
           <Tbody
             key={uuidv4()}
@@ -25,9 +35,10 @@ const MainTable = ({ students, sortByStudents,  isCheckedCheckbox, checkAll, che
             parents={student.parents}
             tests={student.tests}
             checkCur={checkCur}
+            isCheckedCheckbox={isCheckedCheckbox}
           />
         ))}
-        {/* <Tarhived /> */}
+        {/* <Tarhived students={students}/> */}
       </table>
       <p className={css.title}>Archived</p>
     </div>

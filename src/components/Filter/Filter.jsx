@@ -1,5 +1,5 @@
-import React from "react";
-import css from "./Filter.module.css";
+import React from 'react';
+import css from './Filter.module.css';
 
 const Filter = () => {
   return (

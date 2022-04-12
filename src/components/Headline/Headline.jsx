@@ -11,7 +11,7 @@ const Headline = ({ state, onSubmit, handleResetPage }) => {
         Students
       </h1>
       <Searchbar onSubmit={onSubmit} />
-      <Uploadbar state={state}/>
+      <Uploadbar state={state} />
     </div>
   );
 };

@@ -1,17 +1,11 @@
 .tr {
   display: flex;
   width: 1280px;
+  padding: 8px;
 }
 
 .checkbox {
   width: 20px;
-}
-
-.trCheck {
-  background: #f2f2f2;
-  outline: 1px solid #c0c0c0;
-  box-shadow: 0px 1px 4px rgba(60, 52, 135, 0.15);
-  fill: #323232;
 }
 
 .name {
@@ -83,13 +77,20 @@
 }
 
 .td {
-  height: 48px;
+  height: 28px;
   display: inline-block;
-  margin-right: 24px;
   text-align: start;
   color: #828282;
   font-size: 14px;
   font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.td:not(:last-child) {
+  margin-right: 24px;
 }
 
 .tr:nth-child(even) {

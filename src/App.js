@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Students from './pages/Students/Students';
 import Container from './components/Container/Container';
 import Header from './components/Header/Header';
+import './index.css';
 
 function App() {
   return (

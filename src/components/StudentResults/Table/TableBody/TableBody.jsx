@@ -1,3 +1,4 @@
+import React from 'react';
 import css from './TableBody.module.css';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -29,7 +30,7 @@ const TableBody = ({ tests }) => {
           </tr>
         ),
       )}
-    </tbody>
+    </tbody>    
   );
 };
 

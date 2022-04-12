@@ -6,10 +6,13 @@ import { headers } from '../../../helpers/headers';
 const Uploadbar = ({ state }) => {
   return (
     <div className={css.wrapper}>
-      <CSVLink className={css.uploadBtn} headers={headers} data={state} separator={';'}>
-        {/* <button className={css.uploadBtn}> */}
-          <span className={css.iconBtn}></span>Export csv
-        {/* </button> */}
+      <CSVLink
+        className={css.uploadBtn}
+        headers={headers}
+        data={state}
+        separator={';'}
+      >
+        <span className={css.iconBtn}></span>Export csv
       </CSVLink>
     </div>
   );

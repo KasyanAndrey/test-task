@@ -1,5 +1,5 @@
-import React from "react";
-import css from "./User.module.css";
+import React from 'react';
+import css from './User.module.css';
 
 const User = () => {
   return (

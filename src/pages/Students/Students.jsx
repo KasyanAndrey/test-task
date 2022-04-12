@@ -1,16 +1,13 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-
 import css from './Students.module.css';
-import { StudentsApi } from '../../services/QueryApi';
 
+import { StudentsApi } from '../../services/QueryApi';
 import Filter from '../../components/Filter/Filter';
 import Headline from '../../components/Headline/Headline';
 import MainTable from '../../components/MainTable/MainTable';
 import Pagination from '../../components/Pagination/Pagination';
 import Selectedline from '../../components/Selectedline/Selectedline';
-
-// import second from 'first'
 
 const Students = () => {
   const [state, setState] = useState([]);
@@ -26,8 +23,7 @@ const Students = () => {
   const [elemCount, setElemCount] = useState(10);
 
   const [loading, setLoading] = useState(false);
-  const [isCheck, setIsCheck] = useState([]);
-  const [isCheckAll, setIsCheckAll] = useState(false);
+  const [isCheck, setIsCheck] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -50,7 +46,7 @@ const Students = () => {
     setPage(1);
     setSearch('');
     setSortBy([]);
-    setSortDir(1)
+    setSortDir(1);
   };
 
   const sortByStudents = e => {
@@ -81,32 +77,29 @@ const Students = () => {
   const allChecked = state.every(({ checked }) => checked);
 
   const checkAll = () => {
-    const checkItems = state.map(item => ({
-      ...item,
-      checked: !allChecked,
-    }));
-
-    setIsCheckAll(!allChecked);
-    setState(checkItems);
-    setIsCheck(checkItems);
+    setState(state =>
+      state.map(item => ({
+        ...item,
+        checked: !allChecked,
+      })),
+    );
+    setIsCheck(true);
   };
 
   const checkCur = idx => {
-    const checkItem = state.map((item, index) => {
-      if (index === idx) {
-        return {
-          ...item,
-          checked: !item.checked,
-        };
-      }
-
-      return item;
-    });
-
-    setIsCheckAll(!isCheckAll);
-    setState(checkItem);
-    setIsCheck(checkItem);
-  };  
+    setState(state =>
+      state.map((item, index) => {
+        if (index === idx) {
+          return {
+            ...item,
+            checked: !item.checked,
+          };
+        }
+        return item;
+      }),
+    );
+    setIsCheck(true);
+  };
 
   const cancelSelected = () => {
     setState(state => {
@@ -115,17 +108,29 @@ const Students = () => {
         checked: false,
       }));
     });
-    setIsCheck([]);
-    setIsCheckAll(!isCheckAll);
+    setIsCheck(false);
   };
 
-  
+  const choseStudet = () => {
+    const choseItems = [];
+    state.map(item => {
+      if (item.checked || allChecked === !allChecked) {
+        choseItems.push(item);
+      }
+      return item;
+    });
+    return choseItems.length;
+  };
 
   return (
     <section className={css.section}>
       <Filter />
-      {(isCheckAll || isCheck) ? (
-        <Selectedline cancelSelected={cancelSelected} state={state} choseStudet={isCheck} />
+      {isCheck ? (
+        <Selectedline
+          cancelSelected={cancelSelected}
+          state={state}
+          choseStudet={choseStudet}
+        />
       ) : (
         <Headline
           state={state}

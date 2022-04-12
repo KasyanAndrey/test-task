@@ -1,10 +1,9 @@
+import React from 'react';
 import { useState } from 'react';
 import css from './Tbody.module.css';
 
+import { colorFilterScore, colorFilterSpeed, isCheckStudent } from '../../../helpers/colors';
 import StudentResults from '../../StudentResults/StudentResults';
-import { colorFilterScore, colorFilterSpeed } from '../../../helpers/colors';
-
-// import {CheckBox} from '../../Checkbox;';
 
 const Tbody = ({
   student,
@@ -16,7 +15,8 @@ const Tbody = ({
   parents,
   tests,
   index,
-  checkCur
+  checkCur,
+  isCheckedCheckbox
 }) => {
   const [loading, setIoading] = useState(false);
 
@@ -26,7 +26,7 @@ const Tbody = ({
 
   return (
     <tbody className={css.tbody}>
-      <tr className={css.tr}>
+      <tr className={css.tr} style={isCheckStudent(isCheckedCheckbox || student.checked)}>
         <td className={css.td}>
           <div className={css.checkbox}>
             <input

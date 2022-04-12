@@ -7,12 +7,12 @@ import TestAverages from './TestAverages/TestAverages';
 
 const Table = ({ score, speed, tests }) => {
   return (
-    <table>
-      <TableHead />
-      <TableBody tests={tests} />
-      <span className={css.line}></span>
-      <TestAverages score={score} speed={speed} />
-    </table>
+      <table className={css.table}>
+        <TableHead />
+        <TableBody tests={tests} />
+        <span className={css.line}></span>
+        <TestAverages score={score} speed={speed} />
+      </table>
   );
 };
 export default Table;

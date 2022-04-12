@@ -37,3 +37,14 @@ export const colorFilterSpeed = speed => {
     return COLORS.red;
   } else return COLORS.red;
 };
+
+export const isCheckStudent = isCheck => {
+  if (isCheck) {
+    const style = {
+      background: '#F2F2F2',
+      outline: '1px solid #C0C0C0',
+      boxShadow: '0px 1px 4px rgba(60, 52, 135, 0.15)',
+    };
+    return style;
+  }
+};

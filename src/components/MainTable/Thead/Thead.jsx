@@ -1,3 +1,4 @@
+import React from 'react';
 import css from './Thead.module.css';
 
 const Thead = ({ isCheckedCheckbox, checkAll, sortByStudents }) => {

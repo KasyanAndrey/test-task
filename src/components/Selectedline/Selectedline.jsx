@@ -7,7 +7,7 @@ const Selectedline = ({ state, cancelSelected, choseStudet }) => {
   // debugger
   return (
     <div className={css.wrapper}>
-      <p className={css.title}>{choseStudet.length} Student selected</p>
+      <p className={css.title}>{choseStudet()} Student selected</p>
       <div className={css.selectedBar}>
         <batton className={css.btnCancel} onClick={() => cancelSelected()}>
           <span className={css.iconBtnCancel}></span>cancel selection

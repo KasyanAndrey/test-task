@@ -1,7 +1,7 @@
 .wrapper {
   height: 48px;
   padding: 0px 40px;
-  margin-bottom: 14px;
+  /* margin-bottom: 14px; */
   background-color: #c0c0c0;
   display: flex;
   justify-content: space-between;
