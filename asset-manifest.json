@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/test-task/static/css/main.3461e2a3.css",
+    "main.js": "/test-task/static/js/main.52d49782.js",
+    "static/media/default_avatar.png": "/test-task/static/media/default_avatar.deeebbe32324554c6933.png",
+    "static/media/num.svg": "/test-task/static/media/num.888beeb4432d0583095a.svg",
+    "index.html": "/test-task/index.html",
+    "static/media/actions_loader.svg": "/test-task/static/media/actions_loader.32b5277fc033fe66bc51.svg",
+    "static/media/search_icon.svg": "/test-task/static/media/search_icon.392b838ace9849aad965.svg",
+    "static/media/selecet_archive.svg": "/test-task/static/media/selecet_archive.5120cdc9314da3f4b953.svg",
+    "static/media/az.svg": "/test-task/static/media/az.8f15501c246cca25b71d.svg",
+    "static/media/upload.svg": "/test-task/static/media/upload.5451103df01acf49580a.svg",
+    "static/media/close_button.svg": "/test-task/static/media/close_button.f7861342a802d9e80669.svg",
+    "static/media/upload_selectedbar.svg": "/test-task/static/media/upload_selectedbar.8a44d5f2a5d6504689d4.svg",
+    "static/media/cancel_btn.svg": "/test-task/static/media/cancel_btn.ce3d50077d52ec48dd70.svg",
+    "static/media/table_arrow.svg": "/test-task/static/media/table_arrow.86036c04d9952972255c.svg",
+    "static/media/arrowright.svg": "/test-task/static/media/arrowright.c0f6ccd84d6e8b603fc9.svg",
+    "static/media/arrowleft.svg": "/test-task/static/media/arrowleft.f0503d2b1e4eebe8f5d1.svg",
+    "static/media/arrow_drop_down.svg": "/test-task/static/media/arrow_drop_down.b61e3db2ba6d209f5143.svg",
+    "static/media/el_blue.svg": "/test-task/static/media/el_blue.eb3f9df376d9451563ed.svg",
+    "static/media/el_green.svg": "/test-task/static/media/el_green.c7395553dda64dc5b476.svg",
+    "static/media/el_red.svg": "/test-task/static/media/el_red.d5f6cf06ced267efa523.svg",
+    "static/media/el_yellow.svg": "/test-task/static/media/el_yellow.ccac554d472abb5e9bbf.svg",
+    "static/media/arrow_drop_down_logo.svg": "/test-task/static/media/arrow_drop_down_logo.1820399ee634b1738392.svg",
+    "main.3461e2a3.css.map": "/test-task/static/css/main.3461e2a3.css.map",
+    "main.52d49782.js.map": "/test-task/static/js/main.52d49782.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3461e2a3.css",
+    "static/js/main.52d49782.js"
+  ]
+}
