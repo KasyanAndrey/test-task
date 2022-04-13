@@ -5,7 +5,7 @@ const User = () => {
   return (
     <div className={css.wrapper}>
       <div className={css.img}></div>
-      <button class={css.dropBtn}>
+      <button className={css.dropBtn}>
         <span className={css.arrow}></span>
       </button>
     </div>

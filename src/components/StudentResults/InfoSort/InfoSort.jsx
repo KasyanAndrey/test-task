@@ -4,18 +4,17 @@ import css from "./InfoSort.module.css";
 const InfoSort = () => {
   return (
     <div className={css.infoSort}>
-      <div class={css.dropdown}>
-        <button class={css.dropBtn}>
+      <div className={css.dropdown}>
+        <button className={css.dropBtn}>
           All concepts<span className={css.arrow}></span>
         </button>
-        <button class={css.dropBtn}>
+        <button className={css.dropBtn}>
           All score<span className={css.arrow}></span>
         </button>
-        <button class={css.dropBtn}>
+        <button className={css.dropBtn}>
           All speed<span className={css.arrow}></span>
         </button>
       </div>
-
       <div className={css.date}>
         <form>
           <input className={css.input} type="date"/>

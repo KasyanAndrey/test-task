@@ -1,5 +1,6 @@
 .labels{
   margin-bottom: 12px;
+  padding-top: 10px;
 }
 
 .labelsBox {
@@ -62,4 +63,13 @@
 .red::before {
   content: url("../../../assets/el_red.svg");
   padding-right: 8px;
+}
+
+
+
+.line {
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid #a6192e;
+  /* margin-bottom: 10px; */
 }

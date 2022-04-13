@@ -3,7 +3,7 @@ import css from "./Labels.module.css";
 
 const Labels = () => {
   return (
-    <div className={css.labels}>
+    <div className={`${css.labels} ${css.line}`}>
       <div className={css.labelsBox}>
         <h3 className={css.title}>score</h3>
         <p className={css.blue}>90%+ accuracy</p>
@@ -17,7 +17,7 @@ const Labels = () => {
         <p className={css.green}>as expected</p>
         <p className={css.yellow}>below expected</p>
       </div>
-    </div>
+    </div >
   );
 };
 export default Labels;

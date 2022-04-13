@@ -4,23 +4,23 @@ import css from './Filter.module.css';
 const Filter = () => {
   return (
     <div className={css.wrapper}>
-      <div class={css.dropdown}>
-        <button class={css.dropBtn}>
+      <div className={css.dropdown}>
+        <button className={css.dropBtn}>
           Show all<span className={css.arrow}></span>
         </button>
-        <button class={css.dropBtn}>
+        <button className={css.dropBtn}>
           All grades<span className={css.arrow}></span>
         </button>
-        <button class={css.dropBtn}>
+        <button className={css.dropBtn}>
           All classes<span className={css.arrow}></span>
         </button>
-        <button class={css.dropBtn}>
+        <button className={css.dropBtn}>
           Av.score<span className={css.arrow}></span>
         </button>
-        <button class={css.dropBtn}>
+        <button className={css.dropBtn}>
           Av.speed<span className={css.arrow}></span>
         </button>
-        <button class={css.dropBtn}>
+        <button className={css.dropBtn}>
           All classes<span className={css.arrow}></span>
         </button>
         <button className={css.dropBtn}>

@@ -1,9 +1,10 @@
-.nav {
+.listLink {
   display: flex;
   justify-content: space-between;
   width: 640px;
   height: 32px;
   align-items: center;
+  list-style: none;
 }
 
 .link {

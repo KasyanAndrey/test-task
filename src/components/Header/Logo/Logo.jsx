@@ -5,8 +5,8 @@ const Logo = () => {
   return (
     <div className={css.wrapper}>
       <a href="#s"> </a>
-      <div class={css.dropdown}>
-        <button class={css.dropBtn}>
+      <div className={css.dropdown}>
+        <button className={css.dropBtn}>
           School 1<span className={css.arrow}></span>
         </button>
       </div>

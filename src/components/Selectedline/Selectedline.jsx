@@ -8,9 +8,9 @@ const Selectedline = ({ state, cancelSelected, choseStudet }) => {
     <div className={css.wrapper}>
       <p className={css.title}>{choseStudet()} Student selected</p>
       <div className={css.selectedBar}>
-        <batton className={css.btnCancel} onClick={() => cancelSelected()}>
+        <button className={css.btnCancel} onClick={() => cancelSelected()}>
           <span className={css.iconBtnCancel}></span>cancel selection
-        </batton>
+        </button>
         <CSVLink
           className={css.btnExport}
           headers={headers}
@@ -19,9 +19,9 @@ const Selectedline = ({ state, cancelSelected, choseStudet }) => {
         >
           <span className={css.iconBtnExport}></span>export csv
         </CSVLink>
-        <batton className={css.btnArchive}>
+        <button className={css.btnArchive}>
           <span className={css.iconBtnArchive}></span>archive selected
-        </batton>
+        </button>
       </div>
     </div>
   );

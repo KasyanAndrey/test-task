@@ -1,7 +1,6 @@
 .wrapper {
   height: 48px;
   padding: 0px 40px;
-  /* margin-bottom: 14px; */
   background-color: #c0c0c0;
   display: flex;
   justify-content: space-between;
@@ -23,7 +22,7 @@
   display: flex;
   justify-content: space-between;
   text-align: end;
-  width: 413px;
+  width: 440px;
   height: 17px;
   font-style: normal;
   font-weight: 700;
@@ -36,15 +35,18 @@
   border: none;
   outline: none;
   cursor: pointer;
-  width: 141px;
+  width: 145px;
   height: 17px;
+  background-color: transparent;
+  text-transform: uppercase;
+  text-decoration: none;
   color: #ffffff;
 }
 
 .iconBtnCancel {
   position: absolute;
-  bottom: -4px;
-  left: 10px;
+  bottom: -5px;
+  left: -10px;
   display: inline-flex;
   width: 20px;
   height: 20px;
@@ -53,6 +55,7 @@
 }
 
 .btnExport {
+  display: inline-block;
   position: relative;
   border: none;
   outline: none;
@@ -63,6 +66,7 @@
   text-transform: uppercase;
   text-decoration: none;
   color: #ffffff;
+  margin-right: 20px;
 }
 
 .iconBtnExport {
@@ -81,15 +85,18 @@
   border: none;
   outline: none;
   cursor: pointer;
-  width: 142px;
+  width: 146px;
   height: 17px;
+  background-color: transparent;
+  text-transform: uppercase;
+  text-decoration: none;
   color: #424242;
 }
 
 .iconBtnArchive {
   position: absolute;
-  bottom: -2px;
-  left: 10px;
+  bottom: -4px;
+  left: -12px;
   display: inline-flex;
   width: 20px;
   height: 20px;
